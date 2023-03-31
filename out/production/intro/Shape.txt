@@ -1,0 +1,77 @@
+public class Shape {
+
+    public Object areaOfCircle;
+    public Object perimterOfCircle;
+    private double length;
+    private double width;
+    private double height;
+    private double base;
+    private double radius;
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getBase() {
+        return base;
+    }
+
+    public void setBase(int base) {
+        this.base = base;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
+    public double areaOfCircle(){
+       return (22/7) * getRadius() * getRadius();
+    }
+
+    public double perimeterOfCircle(){
+        return 2 * (22/7) * getRadius();
+    }
+
+    public double areaOfTriangle(){
+        return 0.5 * getBase() * getHeight();
+    }
+
+    public double perimeterOfTriangle(){
+        return 2 * getLength() * getBase();
+    }
+
+    public  double areaOfSquare(){
+        return getLength() * getLength();
+    }
+
+    public double perimeterOfSquare(){
+        return 4* getLength();
+    }
+    public void displayShapeInfo(){
+        System.out.println("Circle Info: ");
+        System.out.printf("Circle Area %.2f\nCircle Perimeter %.2f\n", areaOfCircle(), perimeterOfCircle());
+        System.out.println("Triangle Info");
+}

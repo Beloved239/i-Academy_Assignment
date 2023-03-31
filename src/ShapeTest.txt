@@ -1,0 +1,14 @@
+public class ShapeTest {
+    public static void main(String[] args) {
+        Shape circle =new Shape();
+        circle.setRadius(7);
+
+        Shape Triangle = new Shape();
+        Triangle.setBase(20);
+        Triangle.setHeight(15);
+        System.out.printf("Circle Area %.2f\nCircle Perimeter%.2f\n", circle.areaOfCircle, circle.perimterOfCircle);
+    }
+
+
+    }
+}

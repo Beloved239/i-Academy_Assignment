@@ -1,0 +1,36 @@
+public class Club {
+    private String name;
+    private String city;
+    private int foundedYear;
+    private int stadiumCapacity;
+    
+    public Club(String name, String city, int foundedYear, int stadiumCapacity) {
+        this.name = name;
+        this.city = city;
+        this.foundedYear = foundedYear;
+        this.stadiumCapacity = stadiumCapacity;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public String getCity() {
+        return city;
+    }
+    
+    public int getFoundedYear() {
+        return foundedYear;
+    }
+    
+    public int getStadiumCapacity() {
+        return stadiumCapacity;
+    }
+    
+    public void displayInfo() {
+        System.out.println("Club name: " + name);
+        System.out.println("City: " + city);
+        System.out.println("Founded year: " + foundedYear);
+        System.out.println("Stadium capacity: " + stadiumCapacity);
+    }
+}

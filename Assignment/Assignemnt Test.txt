@@ -1,0 +1,19 @@
+public class Main {
+    public static void main(String[] args) {
+        Club club1 = new Club("Manchester United", "Manchester", 1878, 74000);
+        Club club2 = new Club("Liverpool", "Liverpool", 1892, 54074);
+        Club club3 = new Club("Manchester City", "Manchester", 1880, 55097);
+        Club club4 = new Club("Chelsea", "London", 1905, 41841);
+        Club club5 = new Club("Arsenal", "London", 1886, 60704);
+        
+        club1.displayInfo();
+        System.out.println();
+        club2.displayInfo();
+        System.out.println();
+        club3.displayInfo();
+        System.out.println();
+        club4.displayInfo();
+        System.out.println();
+        club5.displayInfo();
+    }
+}

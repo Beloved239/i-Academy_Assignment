@@ -1,0 +1,237 @@
+*Main.java
+
+public class Main {
+    public static void main(String[] args) {
+        Account noahAccount = new Account();
+        Account chidinmaAccount = new Account();
+        Account ridohAccount = new Account();
+
+
+        System.out.println("Diplaying default values");
+        noahAccount.displayMessage();
+
+
+        chidinmaAccount.setAccountName("Chidinma Afogu");
+        chidinmaAccount.setAccountNumber("0011223344");
+        chidinmaAccount.setAccountBalance(50000);
+        chidinmaAccount.setEmail("afogu@gmail.com");
+        chidinmaAccount.setGender("Female");
+        chidinmaAccount.setStatus(true);
+        chidinmaAccount.setHouseNumber(82);
+
+        chidinmaAccount.displayMessage();
+
+        Shape circleObject = new Shape();
+        circleObject.setRadius(54.44);
+    }
+}
+
+*Account.java
+
+public class Account {
+
+    private String accountName;
+    private String accountNumber;
+    private String email;
+    private String gender;
+
+    private double accountBalance;
+
+    private boolean status;
+    private int houseNumber;
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public int getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(int houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+
+    public void debitAccount(){
+        System.out.println("Your account has been debited");
+    }
+
+    public void creditAccount(){
+        System.out.println("Your account has been credited");
+    }
+
+    public void displayMessage(){
+        System.out.printf("Account name is %s\nAccount Number is %s\nUser email is %s\nGender is %s\nAccount Balance is %.2f\n"
+        ,getAccountName(), getAccountNumber(), getEmail(), getGender(), getAccountBalance());
+        System.out.println("Account Status is " + isStatus());
+        System.out.println("House Number is " + getHouseNumber());
+
+    }
+}
+
+
+*Shape.java
+
+public class Shape {
+
+    //creating instance variables
+    private double length;
+
+    private double width;
+
+    private double height;
+
+    private double base;
+
+    private double radius;
+
+
+    // creating methods to get instance variables
+    public double getLength(){
+        return length;
+    }
+    public double getWidth(){
+        return width;
+    }
+    public double getHeight(){
+        return height;
+    }
+    public double getBase(){
+        return base;
+    }
+    public double getRadius(){
+        return radius;
+    }
+
+    //       creating methods to set instance variables
+
+    public void setLength (double length){
+        this.length = length;
+    }
+    public void setWidth (double width){
+        this.width = width;
+    }
+    public void setHeight (double height){
+        this.height = height;
+    }
+    public void setBase (double base){
+        this.base = base;
+    }
+    public void setRadius (double radius){
+        this.radius = radius;
+    }
+
+    public double areaOfCircle(){
+        return (22/7) * (getRadius() * getRadius());
+    }
+
+    public double perimeterOfCircle(){
+        return (22/7) * (2 * getRadius());
+    }
+
+    public double areaOfTriangle(){
+        return 0.5 * getBase() * getHeight();
+    }
+
+    public double perimeterOfTriangle(){
+        return 2 * getLength() * getBase();
+    }
+
+    public double areaOfSquare(){
+        return getLength() * getLength();
+    }
+
+    public double perimeterOfSquare(){
+        return 4 * getLength();
+    }
+
+    public double areaOfRectangle(){
+        return getLength() * getWidth();
+    }
+
+    public double perimeterOfRectangle(){
+        return 2 * (getLength() + getWidth());
+    }
+
+    public void displayShapeInfo(){
+        System.out.println("Circle Info: ");
+        System.out.printf("Circle Area %.2f\nCircle Perimeter %.2f\n", areaOfCircle(), perimeterOfCircle());
+        System.out.println("Triangle Info: ");
+        System.out.printf("Triangle Area %.2f\nTriangle Perimeter %.2f\n", areaOfTriangle(), perimeterOfTriangle());
+        System.out.println("Square Info: ");
+        System.out.printf("Square Area %.2f\nSquare Perimeter %.2f\n", areaOfSquare(), perimeterOfSquare());
+        System.out.println("Rectangle Info: ");
+        System.out.printf("Rectangle Area %.2f\nRectangle Perimeter %.2f\n", areaOfRectangle(), perimeterOfRectangle());
+
+    }
+
+}
+
+*ShapeTest.java
+
+public class ShapeTest {
+    public static void main(String[] args){
+        Shape circle = new Shape();
+        circle.setRadius(7);
+
+        Shape triangle = new Shape();
+        triangle.setLength(20);
+        triangle.setBase(12);
+        triangle.setHeight(8);
+
+        Shape square = new Shape();
+        square.setLength(24);
+
+        Shape rectangle = new Shape();
+        rectangle.setLength(12);
+        rectangle.setWidth(10);
+
+        System.out.printf("Circle Area %.2f\nCircle Perimeter %.2f", circle.areaOfCircle(), circle.perimeterOfCircle());
+    }
+}
+
+

@@ -1,0 +1,16 @@
+import java.text.DecimalFormat;
+
+public class WorldPopulation {
+    public static void main(String[] args) {
+        double currentPopulation = 7.9; // billion
+        double growthRate = 1.05; // percent
+        
+        DecimalFormat df = new DecimalFormat("#.##"); // format for displaying population
+        
+        // calculate estimated population after one, two, three, four, and five years
+        for (int i = 1; i <= 5; i++) {
+            double estimatedPopulation = currentPopulation * Math.pow(1 + (growthRate / 100), i);
+            System.out.println("Estimated world population after " + i + " years: " + df.format(estimatedPopulation) + " billion");
+        }
+    }
+}
