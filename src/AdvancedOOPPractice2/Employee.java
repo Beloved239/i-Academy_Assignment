@@ -1,15 +1,16 @@
-package AdvancedOOP;
+package AdvancedOOPPractice2;
 
 public class Employee {
     private String firstName;
     private String lastName;
     private String bvn;
     private Gender gender;
-    private Date birthDate;
-    private Date hireDate;
-    private Date weddingDate;
+    private String birthDate;
+    private String hireDate;
+    private String weddingDate;
 
-    public Employee(String firstName, String lastName, String bvn, Gender gender, Date birthDate, Date hireDate, Date weddingDate) {
+    public Employee(String firstName, String lastName, String bvn, Gender gender, String birthDate, String hireDate, String weddingDate) {
+        validateBvn(bvn);
         this.firstName = firstName;
         this.lastName = lastName;
         this.bvn = bvn;
@@ -18,12 +19,10 @@ public class Employee {
         this.hireDate = hireDate;
         this.weddingDate = weddingDate;
     }
-    public boolean validateBvn(String bvn){
-        System.out.println(ErrorMessages.bvnLengthError);
-        if (bvn.length()==11){
-            return true;
-        }return false;
-    }//return bvn.length == 11;--Alternative logic
+
+    private boolean validateBvn(String bvn){
+        return bvn.length()== 11;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -42,7 +41,6 @@ public class Employee {
     }
 
     public String getBvn() {
-        validateBvn(bvn);
         return bvn;
     }
 
@@ -59,37 +57,34 @@ public class Employee {
         this.gender = gender;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
-    public Date getHireDate() {
+    public String getHireDate() {
         return hireDate;
     }
 
-    public void setHireDate(Date hireDate) {
+    public void setHireDate(String hireDate) {
         this.hireDate = hireDate;
     }
 
-    public Date getWeddingDate() {
+    public String getWeddingDate() {
         return weddingDate;
     }
 
-    public void setWeddingDate(Date weddingDate) {
+    public void setWeddingDate(String weddingDate) {
         this.weddingDate = weddingDate;
     }
 
-
-
     public void displayEmployeeInfo(){
         System.out.printf("""
-                Firstname: %s\nLastname: %s\nBVN: %s\nGender %s\nBirthDate: %s\nHireDate: %s\nWeddingDate: %s\n
+                Firstname: %s \nLastname: %s \nBVN: %s \nGender: %s \nBirthDate: %s \nHireDate: %s \nWeddingDate:%s \n
                 
-                
-                """,getFirstName(),getLastName(),getBvn(), getGender(),getBirthDate(),getHireDate(),getWeddingDate());
+                """,getFirstName(),getLastName(),getBvn(),getGender(),getBirthDate(),getHireDate(),getWeddingDate());
     }
 }

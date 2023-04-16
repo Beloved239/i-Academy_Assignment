@@ -1,6 +1,7 @@
 package AdvancedOOP;
 
 public class EmployeeTest {
+
     public static void main(String[] args) {
         Date birthDate = new Date(2,5,1983);
         Date hireDate = new Date(9,31,2023);
@@ -8,8 +9,10 @@ public class EmployeeTest {
 //        hireDate.setMonth(31);
 //        hireDate.setDay(1983);
         Date weddingDate = new Date(3,5,2016);
-        Employee sarah = new Employee("Sarah", "Adelola","123456789123","Female", birthDate,hireDate,weddingDate);
+        Employee sarah = new Employee("Sarah", "Adelola","1234567891",Gender.FEMALE, birthDate,hireDate,weddingDate);
         sarah.displayEmployeeInfo();
 
     }
+
+
 }

@@ -18,22 +18,26 @@ public class TemperatureConverter {
         if (value==1){
             System.out.println("Enter your value");
             double newValue = input.nextDouble();
-            System.out.println(displayCelsius(newValue));
+            System.out.printf("%.1f C",displayCelsius(newValue));
         } else if (value==2) {
             System.out.println("Enter your value");
             double newValue = input.nextDouble();
-            System.out.println(displayFahrenheit(value));
+            System.out.printf("%.1f F",displayFahrenheit(value));
 
+        }else {
+            System.out.println("Wrong value entered");
         }
 
 
     }
 
     public static double displayCelsius(double fahrenheit){
+
         return ((5.0/9.0)*(fahrenheit-32));
     }
 
     public static double displayFahrenheit(double celsius){
+
         return ((9.0/5.0)*(celsius+32));
     }
 }
